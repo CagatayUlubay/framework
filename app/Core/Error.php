@@ -53,7 +53,7 @@ class Error extends Controller
      */
     public static function display($errors, $class = 'alert alert-danger'){
 
-        $errors = is_array($errors) ? $errors : array($errors);
+        $errors = is_array($errors) ? $errors : (!empty($errors) ? array($errors) : array());
         $row    = '';
 
         foreach ($errors as $error) {
@@ -61,5 +61,5 @@ class Error extends Controller
         }
 
         return $row;
-	}
+    }
 }
